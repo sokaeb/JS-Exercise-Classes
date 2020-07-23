@@ -190,7 +190,24 @@ class Instructor extends Lambdasian {
   grade(student, subject){
     return `${student.name} receives a perfect score on ${subject}`;
   };
+  pointsAdded(points){
+    points = Math.random() + points;
+  };
+  graduate(grade){
+    if(grade > 70){
+      return `${this.name} is a Lambda Graduate!`;
+    }else {   
+      this.pointsAdded();
+    };  
 };
+/*
+  STRETCH PROBLEM (no tests!)
+    - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
+    - Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
+    - Add a graduate method to a student.
+      + This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
+      + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
+*/
 
 /*
   TASK 5
@@ -214,6 +231,7 @@ class Student extends Lambdasian {
     this.previousBackground = attributes.previousBackground;
     this.className = attributes.className;
     this.favSubjects = attributes.favSubjects;
+    this.grade = attributes.grade;
   };
   listSubjects(){
     return `Loving ${this.favSubjects}!`;
@@ -225,6 +243,7 @@ class Student extends Lambdasian {
     return `${this.name} has begun spring challenge on ${subject}.`
   };
 };
+
 
 /*
   TASK 6
