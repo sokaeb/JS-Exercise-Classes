@@ -50,14 +50,14 @@ class Person {
     if(this.stomach.length < 10){
     this.stomach.push(someFood); 
     };
- poop(){
+  };
+  poop(){
    this.stomach = [];
  };
  toString(){
    return `${this.name} is ${this.age}`;
  };
   }
-}
 
 // class Person {
 //   constructor(attributes){
@@ -107,7 +107,7 @@ class Car {
       this.odometer = this.odometer + distance;
       this.tank = this.tank - distance / this.milesPerGallon;
    }else {
-    this.odometer = this.odometer + this.tank + this.milesPerGallon;
+    this.odometer = this.odometer + this.tank * this.milesPerGallon;
     this.tank = 0;
     return `I ran out of fuel at ${this.odometer} miles!`;
    };
@@ -218,11 +218,11 @@ class Student extends Lambdasian {
   listSubjects(){
     return `Loving ${this.favSubjects}!`;
   };
-  prAssignment(subject){
-    return `${Student.name} has submitted a PR for ${subject}.`
+  PRAssignment(subject){
+    return `${this.name} has submitted a PR for ${subject}.`
   };
   sprintChallenge(subject){
-    return `${Student.name} has begun spring challenge on ${subject}.`
+    return `${this.name} has begun spring challenge on ${subject}.`
   };
 };
 
